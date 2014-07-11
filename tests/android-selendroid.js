@@ -14,7 +14,9 @@ module.exports = function(port, cb) {
   });
 
   browser.init({
-    device:'selendroid',
+    automationName: 'selendroid',
+    platformName: 'Android',
+    deviceName: 'Android Emulator',
     app:'http://saucelabs.com/example_files/selendroid-test-app-0.6.0-SNAPSHOT.apk'
     , "app-package": "io.selendroid.testapp"
     , "app-activity": ".HomeScreenActivity"

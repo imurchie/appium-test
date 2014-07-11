@@ -15,14 +15,14 @@ module.exports = function(port, cb) {
 
   /*
   * This test loads up Fil's homepage, checks that the title matches
-  * some standard expectation, clicks on a link labeled "CV" and 
+  * some standard expectation, clicks on a link labeled "CV" and
   * expects that the address bar contains "cv.html".
   */
 
   browser.init({
-    'browserName': 'android',
-    'platform': 'Linux',
-    'app':'browser',
+    browserName: 'Browser',
+    platformName: 'Android',
+    deviceName: 'Android Emulator',
   }, function(err) {
     if (err) {
       console.error('There was an error starting the test:');

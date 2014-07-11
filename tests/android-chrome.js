@@ -15,17 +15,23 @@ module.exports = function(port, cb) {
 
   /*
   * This test loads up Fil's homepage, checks that the title matches
-  * some standard expectation, clicks on a link labeled "CV" and 
+  * some standard expectation, clicks on a link labeled "CV" and
   * expects that the address bar contains "cv.html".
   */
 
   browser.init({
-      device:'Android',
-      app:'chrome',
+      browserName: 'Chrome',
+      deviceName: 'Android Emulator',
+      platformName: 'Android',
+      platformVersion: '4.4'
     }, function() {
 
     browser.get("http://filmaj.ca", function() {
       browser.title(function(err, title) {
+        if (err) {
+          console.log(err);
+          return;
+        }
         assert.ok(~title.indexOf('Fil Maj'), 'Wrong title!');
         browser.elementByLinkText('CV', function(err, el) {
           browser.clickElement(el, function() {
